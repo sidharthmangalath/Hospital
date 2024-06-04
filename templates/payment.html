@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}" />
+  </head>
+  <body>
+    <form  method="post">
+      {%csrf_token%}
+      <div class="container" style="border-radius: 8px; background-color: rgba(165, 42, 42, 0.74);">
+        <h1>Confirm your Payment</h1>
+        <h1 style="font-size: larger;">Amount to be payed: {{amount}}</h1>
+        <div class="first-row">
+          <div class="owner">
+            <h3>Owner</h3>
+            <div class="input-field">
+              <input type="text" name="name" required/>
+            </div>
+          </div>
+
+          <div class="CVV">
+            <h3>CVV</h3>
+            <div class="input-field">
+              <input type="number" name="CVV" required="True" />
+            </div>
+          </div>
+        </div>
+
+        <div class="second-row">
+          <div class="card-number">
+            <h3>Card Number</h3>
+            <div class="input-field">
+              <input type="text" name="number" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="third-row">
+          <h3>Validity</h3>
+          <div class="selection">
+            <div class="date">
+              <select name="months" id="months" required>
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="Jun">Jun</option>
+                <option value="Jul">Jul</option>
+                <option value="Aug">Aug</option>
+                <option value="Sep">Sep</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
+              </select>
+              <select name="years" id="years" required>
+                <option value="2028">2028</option>
+                <option value="2027">2027</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+            <div class="cards">
+              <img src="static\image\mc.png" alt="" />
+              <img src="static\image\pp.png" alt="" />
+              <img src="static\image\vi.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="button mt-2 mb-3">
+          <button type="submit" onclick="myalert()" class="btn btn-success mt-3">Confirm</button>
+          <script>
+            function myalert() {
+        alert("appointment is confirmed");
+    }
+          </script>
+        </div>
+      </div>
+    </form>
+    
+  </body>
+</html>

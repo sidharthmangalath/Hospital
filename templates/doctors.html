@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>
+    body{
+        background-image: url("https://wallpapers.com/images/hd/cool-medical-and-health-symbols-yk9ofybop75souw0.jpg");
+    }
+</style>
+<div class="row">
+    {%for p in pro%}
+    <div class="col">
+  <div class="card" style="width: 18rem; height: 26rem;">
+      <img>
+      <div class="card-body">
+        <h5 class="card-title">{{p.name}}</h5>
+        <p class="card-text">{{p.department}}</p>
+        <img src="{{p.image}}" class="card-img-top" alt="">
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  </div>
+{%endblock%}

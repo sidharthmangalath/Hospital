@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>
+    nav{
+        background-color: blue;
+    }
+    #one{
+        
+        width: 350px;
+        border: 15px solid rgb(4, 189, 245);
+        padding: 50px;
+        margin: 40px;
+        margin-left: 375px;
+    }
+</style>
+<img align="right" src="static\image\Receptionist-512.webp" alt="" width="750px" height="620px">
+<form action="" method="POST" id="one">
+    {%csrf_token%}
+    <div class="mb-3">
+      <input type="text" name="pname" placeholder="Enter full Name"></div>
+      
+      <div class="mb-3">
+        <input type="text" name="mob" placeholder="Enter Mobile Number "> </div>
+    <div class="mb-3">
+      <input type="email" name="mail" placeholder="Enter E-mail address" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="date">Appointment date</label>
+        <input type="date" name="date" placeholder="Appointment date">
+    </div>
+    <div class="mb-3">
+        <label for="department">Department</label>
+        <select name="dept" id="department">
+        <option value="">Select department</option>
+        <option value="General Medicine">General Medicine</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Ophthalmology">Ophthalmology</option>
+        <option value="Radiology">Radiology</option>
+        <option value="Orthopaedics">Orthopaedics</option>
+        <option value="Pediatrics">Pediatrics</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="doctor">Doctor</label>
+        <select name="doctor" id="doctor">
+        <option value="">Select doctor</option>
+        <option value="Dr. Subin">Dr. Subin</option>
+        
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="date">Address Details</label>
+        <div>
+        <input type="text" name="addr" placeholder="Enter Address">
+        
+        </div>
+        
+    </div>
+    <a href="{%url 'payment'%}" class="btn btn-success" role="button">Make Appointment</a>
+    
+</form>
+
+{%endblock%}
